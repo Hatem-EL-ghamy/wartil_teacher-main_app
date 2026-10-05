@@ -1,0 +1,103 @@
+# Wartil Teacher App - تطبيق ورتّل للمعلم 📖✨
+
+[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev/) 
+[![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
+
+## 📝 About The Project / عن المشروع
+
+**Wartil Teacher (ورتّل للمعلم)** is a comprehensive mobile application built with Flutter, designed to empower Quran teachers to conduct remote interactive online classes. The platform provides seamless real-time audio and video communication, making distance Quranic education highly effective and engaging.
+
+**تطبيق ورتّل للمعلم** هو تطبيق متكامل مبني باستخدام إطار عمل فلاتر (Flutter)، يهدف إلى تمكين معلمي القرآن الكريم من إدارة حصصهم عن بُعد بكل سهولة. يوفر التطبيق منصة تعليمية تفاعلية تعتمد على تقنيات الاتصال المرئي والصوتي المباشر لجعل تجربة التعليم عن بُعد أكثر فعالية.
+
+---
+
+## 🌟 Key Features / أهم المميزات
+
+- 📹 **Live Video & Audio Calls:** High-quality real-time communication powered by **Agora RTC Engine**.
+- 📞 **Incoming Call Integration:** Native-like incoming call UI using **CallKit**.
+- ⚡ **Real-time Updates:** Instant connection and events listening using **Pusher Channels**.
+- 🔔 **Push Notifications:** Stay updated with local and push notifications.
+- 🎨 **Responsive UI:** Beautiful, smooth, and adaptive interface for all screen sizes using `flutter_screenutil`.
+- 🌍 **Localization & Fonts:** Fully supports Arabic RTL UI with the custom **Cairo** font.
+
+- 📹 **مكالمات فيديو وصوت مباشرة:** تواصل عالي الدقة في الوقت الفعلي باستخدام محرك **Agora**.
+- 📞 **استقبال المكالمات:** واجهة استقبال مكالمات مدمجة مع النظام (CallKit).
+- ⚡ **تحديثات فورية:** استماع وتحديث فوري للأحداث باستخدام **Pusher**.
+- 🔔 **إشعارات:** تنبيهات فورية للمعلم بمواعيد الحصص والمكالمات.
+- 🎨 **واجهة مستخدم متجاوبة:** تصميم جذاب وعصري يدعم جميع الشاشات.
+- 🌍 **دعم كامل للغة العربية:** واجهة تدعم (RTL) بشكل كامل مع خطوط **Cairo** الاحترافية.
+
+---
+
+## 🛠️ Tech Stack & Libraries / التقنيات والمكتبات المستخدمة
+
+- **Framework:** [Flutter](https://flutter.dev/) (SDK ^3.6.0)
+- **State Management:** [Flutter BLoC](https://pub.dev/packages/flutter_bloc)
+- **Dependency Injection:** [GetIt](https://pub.dev/packages/get_it)
+- **Networking:** [Dio](https://pub.dev/packages/dio) & [Retrofit](https://pub.dev/packages/retrofit)
+- **Real-Time Communication (WebRTC):** [Agora RTC Engine](https://pub.dev/packages/agora_rtc_engine)
+- **WebSockets:** [Pusher Channels Flutter](https://pub.dev/packages/pusher_channels_flutter)
+- **Call Management:** [Flutter Callkit Incoming](https://pub.dev/packages/flutter_callkit_incoming)
+- **Local Storage:** [Shared Preferences](https://pub.dev/packages/shared_preferences)
+- **UI Responsiveness:** [Flutter ScreenUtil](https://pub.dev/packages/flutter_screenutil)
+- **Environment Variables:** [Flutter Dotenv](https://pub.dev/packages/flutter_dotenv)
+
+---
+
+## 🚀 Getting Started / كيفية تشغيل المشروع
+
+### Prerequisites / المتطلبات الأساسية
+- Flutter SDK (`^3.6.2` or later)
+- Android Studio or VS Code
+- Agora Developer Account (for Audio/Video keys)
+
+### Installation / خطوات التثبيت
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/wartil-teacher.git
+   ```
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd wartil-teacher
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   flutter pub get
+   ```
+
+4. **Code Generation (For Retrofit & JSON Serializable):**
+   ```bash
+   flutter pub run build_runner build --delete-conflicting-outputs
+   ```
+
+5. **Setup Environment Variables:**
+   Create a `.env` file in the root directory and add your API keys:
+   ```env
+   BASE_URL=your_api_base_url
+   AGORA_APP_ID=your_agora_app_id
+   PUSHER_APP_KEY=your_pusher_key
+   ```
+
+6. **Run the App:**
+   ```bash
+   flutter run
+   ```
+
+---
+
+## 📂 Folder Structure / هيكلة المشروع
+
+The project follows a **Feature-First / Clean Architecture** approach:
+
+```text
+lib/
+ ├── core/              # المشتركات (Networking, Theming, Helpers, Call Services)
+ ├── features/          # مميزات التطبيق الأساسية
+ │    ├── home/         # الشاشة الرئيسية والإحصائيات
+ │    ├── auth/         # تسجيل الدخول والتحقق
+ │    └── ...
+ ├── main.dart          # نقطة انطلاق التطبيق
+```
